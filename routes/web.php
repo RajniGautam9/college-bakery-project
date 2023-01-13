@@ -1,4 +1,6 @@
+
 <?php
+
 
 /*
 |--------------------------------------------------------------------------
@@ -11,6 +13,8 @@
 |
 */
 
+
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -21,7 +25,11 @@ Route::get('master', function () {
 });
 
 Route::get('index', function () {
-    return view('index');
+    return view('index');   
     
+});
+
+Route::get('add', function () {
+    return view('customer.add_customer');   
     
 });
