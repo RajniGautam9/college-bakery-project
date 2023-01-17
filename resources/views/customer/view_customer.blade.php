@@ -1,8 +1,14 @@
+<<<<<<< HEAD
 
 @extends('layouts.master')
 @section('content')
 
 <div class="content-wrapper">
+=======
+@extends('layouts.master')
+@section('content')
+
+>>>>>>> 1c9f5e29dd928d4133aa88d8ad93d9438ac2114c
 <div class="row">
           <div class="col-12">
             <div class="card">
@@ -27,6 +33,7 @@
                   <thead>
                     <tr>
                       <th>ID</th>
+<<<<<<< HEAD
                       <th>Name</th>
                       <th>Image</th>
                       <th>Phone</th>
@@ -60,6 +67,31 @@
                       <a href=""><button class="btn btn-sm btn-success">Delete</button></a> </form></td>
                     </tr>
                     @endforeach
+=======
+                      <th>User</th>
+                      <th>Date</th>
+                      <th>Status</th>
+                      <th>Reason</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>183</td>
+                      <td>John Doe</td>
+                      <td>11-7-2014</td>
+                      <td><span class="tag tag-success">Approved</span></td>
+                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                    </tr>
+                    <tr>
+                      <td>219</td>
+                      <td>Alexander Pierce</td>
+                      <td>11-7-2014</td>
+                      <td><span class="tag tag-warning">Pending</span></td>
+                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                    </tr>
+                   
+                   
+>>>>>>> 1c9f5e29dd928d4133aa88d8ad93d9438ac2114c
                   </tbody>
                 </table>
               </div>
@@ -68,5 +100,9 @@
             <!-- /.card -->
           </div>
         </div>
+<<<<<<< HEAD
 </div>
+=======
+
+>>>>>>> 1c9f5e29dd928d4133aa88d8ad93d9438ac2114c
         @endsection

@@ -33,6 +33,7 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
+<<<<<<< HEAD
               <form role="form" method="post" action="{{route('customer.update',[$customer->id])}}" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
@@ -40,13 +41,24 @@
                   <div class="form-group">
                     <label for="exampleInputEmail1">Name</label>
                     <input type="text" class="form-control" id="exampleInputEmail1" value="{{$customer->name}}" placeholder="Enter name" name="name">
+=======
+              <form>
+                <div class="card-body">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Name</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter name">
+>>>>>>> 1c9f5e29dd928d4133aa88d8ad93d9438ac2114c
                   </div>
                   
                   <div class="form-group">
                     <label for="exampleInputFile">Profile</label>
                     <div class="input-group">
                       <div class="custom-file">
+<<<<<<< HEAD
                         <input type="file" class="custom-file-input" id="exampleInputFile" name="image" value="{{$customer->image}}">
+=======
+                        <input type="file" class="custom-file-input" id="exampleInputFile" name="image">
+>>>>>>> 1c9f5e29dd928d4133aa88d8ad93d9438ac2114c
                         <label class="custom-file-label" for="exampleInputFile">Choose file</label>
                       </div>
                       <div class="input-group-append">
@@ -57,19 +69,31 @@
 
                   <div class="form-group">
                     <label for="exampleInputPassword1">Phone</label>
+<<<<<<< HEAD
                     <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Enter phone" name="phone" value="{{$customer->phone}}">
+=======
+                    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Enter phone" name="phone">
+>>>>>>> 1c9f5e29dd928d4133aa88d8ad93d9438ac2114c
                   </div>
 
                   <div class="form-group">
                     <label for="exampleInputPassword1">Address</label>
+<<<<<<< HEAD
                     <input type="address" class="form-control" id="exampleInputPassword1" placeholder="Enter address" name="address" value="{{$customer->address}}">
+=======
+                    <input type="address" class="form-control" id="exampleInputPassword1" placeholder="Enter address" name="address">
+>>>>>>> 1c9f5e29dd928d4133aa88d8ad93d9438ac2114c
                   </div>
                  
                 
 
                 <div class="form-group">
                                                  <label for="field" name="status" required>Gender</label> 
+<<<<<<< HEAD
                                                 <select id="select" class="form-control" name="gender" value="{{$customer->gender}}">
+=======
+                                                <select id="select" class="form-control" name="gender">
+>>>>>>> 1c9f5e29dd928d4133aa88d8ad93d9438ac2114c
                                                     <option value="Male">Male</option>
                                                     <option value="Female">Female</option>
                                                 </select>
@@ -78,12 +102,20 @@
                 <!-- /.card-body -->
                 <div class="form-group">
                     <label for="exampleInputPassword1">Email</label>
+<<<<<<< HEAD
                     <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Enter address" name="email"  value="{{$customer->email}}">
+=======
+                    <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Enter address" name="email">
+>>>>>>> 1c9f5e29dd928d4133aa88d8ad93d9438ac2114c
                   </div>
 
                   <div class="form-group">
                                                  <label for="field" name="status" required>Status</label> 
+<<<<<<< HEAD
                                                 <select id="select" class="form-control" name="status"  value="{{$customer->status}}">
+=======
+                                                <select id="select" class="form-control" name="status">
+>>>>>>> 1c9f5e29dd928d4133aa88d8ad93d9438ac2114c
                                                     <option value="Active">Active</option>
                                                     <option value="Deactive">Inactive</option>
                                                 </select>
