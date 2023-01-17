@@ -33,13 +33,15 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form>
+              <form role="form" method="post" action="{{route('stores.update',[$store->id])}}" enctype="multipart/form-data">
+                @csrf
+                @method('PUT')
                 <div class="card-body">
                   <div class="form-group">
                     <label for="exampleInputEmail1"> Store name</label>
                     <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter name" name="name" value="{{$store->name}}">
                   </div>
-                  <div class="card-body">
+
                   <div class="form-group">
                     <label for="exampleInputEmail1">PAN No</label>
                     <input type="number" class="form-control" id="exampleInputEmail1" placeholder="Enter name" name="pan" value="{{$store->pan}}">
@@ -48,7 +50,7 @@
                  
                   <div class="form-group">
                     <label for="exampleInputPassword1">Phone</label>
-                    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Enter phone" name="phone" value="{{$store->phone}}">
+                    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Enter phone" name="call" value="{{$store->call}}">
                   </div>
 
                   <div class="form-group">
@@ -73,7 +75,7 @@
 
                   <div class="form-group">
                     <label for="exampleInputPassword1">Mobile No</label>
-                    <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Enter mobile no" name="mobile" value="{{$store->mobile}}">
+                    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Enter mobile no" name="mobile" value="{{$store->mobile}}">
                   </div>
 
                   <div class="form-group">

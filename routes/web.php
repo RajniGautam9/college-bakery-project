@@ -31,3 +31,4 @@ Route::get('index', function () {
 
 
 Route::resource('customer','CustomerController');
+Route::resource('stores','StoreController');

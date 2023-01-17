@@ -17,9 +17,8 @@ class CreateStoresTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('pan');
-            $table->string('phone');
+            $table->string('call');
             $table->string('reg');
-            $table->string('phone');
             $table->string('address');
             $table->string('city');
             $table->string('email');

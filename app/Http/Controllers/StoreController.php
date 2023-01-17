@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\store;
 
 class StoreController extends Controller
 {
@@ -13,7 +14,9 @@ class StoreController extends Controller
      */
     public function index()
     {
-        //
+       $store = store::all();
+       return view('stores.view_stores',compact('store'));
+       
     }
 
     /**
@@ -23,7 +26,7 @@ class StoreController extends Controller
      */
     public function create()
     {
-        //
+        return view('stores.add_stores');
     }
 
     /**
@@ -34,7 +37,12 @@ class StoreController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+
+        ]);
+        store::create($request->all());
+        return redirect()->back();
     }
 
     /**
@@ -56,7 +64,8 @@ class StoreController extends Controller
      */
     public function edit($id)
     {
-        //
+        $store = store::find($id);
+        return view('stores.edit_store',compact('store'));
     }
 
     /**
@@ -68,7 +77,12 @@ class StoreController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $store = store::find($id);
+         $store->update($request->all());
+   
+   
+          return redirect()->route('stores.index')
+                           ->with('success','customer updated successfully');
     }
 
     /**
@@ -79,6 +93,10 @@ class StoreController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $store = store::find($id);
+
+        $store->delete();
+ 
+        return redirect()->route('store.index');
     }
 }

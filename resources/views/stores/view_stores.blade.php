@@ -46,7 +46,7 @@
                       <td>{{$loop->iteration}}</td>
                       <td>{{$store->name}}</td>
                       <td>{{$store->pan}}</td> 
-                      <td>{{$store->phone}}</td>
+                      <td>{{$store->call}}</td>
                       <td>{{$store->reg}}</td>
                       <td>{{$store->address}}</td>
                       <td>{{$store->city}}</td>
@@ -56,9 +56,9 @@
                      
 
                       
-                     <td class="center"> <a href="{{route('store.edit',[$store->id])}}"><button class="btn btn-sm btn-danger">Edit</button></a>
+                     <td class="center"> <a href="{{route('stores.edit',[$store->id])}}"><button class="btn btn-sm btn-danger">Edit</button></a>
 
-                     <form role="form" method="post" action="{{route('store.destroy',[$store->id])}}">
+                     <form role="form" method="post" action="{{route('stores.destroy',[$store->id])}}">
                          @csrf
                         @method('DELETE')
                       <a href=""><button class="btn btn-sm btn-success">Delete</button></a> </form></td>

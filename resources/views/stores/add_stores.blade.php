@@ -29,31 +29,32 @@
             <!-- general form elements -->
             <div class="card card-dark">
               <div class="card-header">
-                <h3 class="card-title">Customer Form</h3>
+                <h3 class="card-title">Store Form</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form>
+              <form method="post" action="{{route('stores.store')}}" enctype="multipart/form-data">
+                @csrf
                 <div class="card-body">
                   <div class="form-group">
                     <label for="exampleInputEmail1"> Store name</label>
                     <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter name" name="name">
                   </div>
-                  <div class="card-body">
+                  
                   <div class="form-group">
                     <label for="exampleInputEmail1">PAN No</label>
-                    <input type="number" class="form-control" id="exampleInputEmail1" placeholder="Enter name" name="pan">
+                    <input type="number" class="form-control" id="exampleInputEmail1" placeholder="Enter pan no" name="pan">
                   </div>
                   
                  
                   <div class="form-group">
                     <label for="exampleInputPassword1">Phone</label>
-                    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Enter phone" name="phone">
+                    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Enter phone" name="call">
                   </div>
 
                   <div class="form-group">
                     <label for="exampleInputPassword1">Registration No</label>
-                    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Enter phone" name="reg">
+                    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Enter registration" name="reg">
                   </div>
 
                   <div class="form-group">
@@ -63,7 +64,7 @@
 
                   <div class="form-group">
                     <label for="exampleInputPassword1">City</label>
-                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter address" name="city">
+                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter city" name="city">
                   </div>
                  
                 <div class="form-group">
@@ -73,7 +74,7 @@
 
                   <div class="form-group">
                     <label for="exampleInputPassword1">Mobile No</label>
-                    <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Enter address" name="mobile">
+                    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Enter mobile no" name="mobile">
                   </div>
 
                   <div class="form-group">
