@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\customer;
 
 class CustomerController extends Controller
 {
@@ -13,7 +14,8 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        //
+       $customer = customer::all();
+       return view('customer.view_customer',compact('customer'));
     }
 
     /**
@@ -23,7 +25,7 @@ class CustomerController extends Controller
      */
     public function create()
     {
-        //
+        return view('customer.add_customer');
     }
 
     /**
@@ -34,7 +36,12 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+
+        ]);
+        customer::create($request->all());
+        return redirect()->back();
     }
 
     /**
@@ -56,7 +63,8 @@ class CustomerController extends Controller
      */
     public function edit($id)
     {
-        //
+       $customer = customer::find($id);
+        return view('customer.edit_customer',compact('customer'));
     }
 
     /**
@@ -68,7 +76,12 @@ class CustomerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+         $customer = customer::find($id);
+         $customer->update($request->all());
+   
+   
+          return redirect()->route('customer.index')
+                           ->with('success','customer updated successfully');
     }
 
     /**
@@ -79,6 +92,10 @@ class CustomerController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $customer = customer::find($id);
+
+        $customer->delete();
+ 
+        return redirect()->route('customer.index');
     }
 }
