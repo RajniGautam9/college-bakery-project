@@ -37,48 +37,48 @@
                 <div class="card-body">
                   <div class="form-group">
                     <label for="exampleInputEmail1"> Store name</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter name" name="name">
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter name" name="name" value="{{$store->name}}">
                   </div>
                   <div class="card-body">
                   <div class="form-group">
                     <label for="exampleInputEmail1">PAN No</label>
-                    <input type="number" class="form-control" id="exampleInputEmail1" placeholder="Enter name" name="pan">
+                    <input type="number" class="form-control" id="exampleInputEmail1" placeholder="Enter name" name="pan" value="{{$store->pan}}">
                   </div>
                   
                  
                   <div class="form-group">
                     <label for="exampleInputPassword1">Phone</label>
-                    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Enter phone" name="phone">
+                    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Enter phone" name="phone" value="{{$store->phone}}">
                   </div>
 
                   <div class="form-group">
                     <label for="exampleInputPassword1">Registration No</label>
-                    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Enter phone" name="reg">
+                    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Enter registration" name="reg" value="{{$store->reg}}">
                   </div>
 
                   <div class="form-group">
                     <label for="exampleInputPassword1">Address</label>
-                    <input type="address" class="form-control" id="exampleInputPassword1" placeholder="Enter address" name="address">
+                    <input type="address" class="form-control" id="exampleInputPassword1" placeholder="Enter address" name="address" value="{{$store->address}}">
                   </div>
 
                   <div class="form-group">
                     <label for="exampleInputPassword1">City</label>
-                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter address" name="city">
+                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter city" name="city" value="{{$store->city}}">
                   </div>
                  
                 <div class="form-group">
                     <label for="exampleInputPassword1">Email</label>
-                    <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Enter address" name="email">
+                    <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Enter email" name="email" value="{{$store->email}}">
                   </div>
 
                   <div class="form-group">
                     <label for="exampleInputPassword1">Mobile No</label>
-                    <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Enter address" name="mobile">
+                    <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Enter mobile no" name="mobile" value="{{$store->mobile}}">
                   </div>
 
                   <div class="form-group">
                                                  <label for="field" name="status" required>Status</label> 
-                                                <select id="select" class="form-control" name="status">
+                                                <select id="select" class="form-control" name="status" value="{{$store->status}}">
                                                     <option value="Active">Active</option>
                                                     <option value="Deactive">Inactive</option>
                                                 </select>
