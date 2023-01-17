@@ -29,7 +29,4 @@ Route::get('index', function () {
     
 });
 
-Route::get('add', function () {
-    return view('customer.add_customer');   
-    
-});
+Route::resource('delivery','DeliveryController');

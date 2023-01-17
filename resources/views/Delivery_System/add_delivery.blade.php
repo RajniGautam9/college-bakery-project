@@ -1,4 +1,3 @@
-
 @extends('layouts.master')
 @section('content')
 
@@ -8,7 +7,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-12">
-            <h1>General Form</h1>
+            <h1>Delivery Form</h1>
           </div>
           <div class="col-sm-12">
             <ol class="breadcrumb float-sm-right">
@@ -29,63 +28,52 @@
             <!-- general form elements -->
             <div class="card card-dark">
               <div class="card-header">
-                <h3 class="card-title">Customer Form</h3>
+                <h3 class="card-title">Delivery Form</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
               <form>
                 <div class="card-body">
+                <form role="form" method="post">
+                                    
+                                    
                   <div class="form-group">
                     <label for="exampleInputEmail1">Name</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter name">
-                  </div>
-                  
-                  <div class="form-group">
-                    <label for="exampleInputFile">Profile</label>
-                    <div class="input-group">
-                      <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="exampleInputFile" name="image">
-                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                      </div>
-                      <div class="input-group-append">
-                        <span class="input-group-text">Upload</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="form-group">
-                    <label for="exampleInputPassword1">Phone</label>
-                    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Enter phone" name="phone">
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter name" name="name">
                   </div>
 
                   <div class="form-group">
                     <label for="exampleInputPassword1">Address</label>
                     <input type="address" class="form-control" id="exampleInputPassword1" placeholder="Enter address" name="address">
                   </div>
-                 
-                
-
-                <div class="form-group">
-                                                 <label for="field" name="status" required>Gender</label> 
-                                                <select id="select" class="form-control" name="gender">
-                                                    <option value="Male">Male</option>
-                                                    <option value="Female">Female</option>
-                                                </select>
-                                            </div>
-                                      
-                <!-- /.card-body -->
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Email</label>
-                    <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Enter address" name="email">
-                  </div>
+               
 
                   <div class="form-group">
-                                                 <label for="field" name="status" required>Status</label> 
+                    <label for="exampleInputPassword1">Phone</label>
+                    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Enter phone" name="phone">
+                  </div>
+
+                 
+
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Payment</label>
+                   
+                                                <select id="select" class="form-control" name="payment">
+                                                    <option value="cash">cash</option>
+                                                    <option value="Debit card">Debit card</option>
+                                                    <option value="credit card">credit card</option>
+                                                </select>
+                                            </div>
+                  
+                 
+                 <div class="form-group">
+                                                 <label for="exampleInputPassword1" required>Status</label> 
                                                 <select id="select" class="form-control" name="status">
                                                     <option value="Active">Active</option>
                                                     <option value="Deactive">Inactive</option>
                                                 </select>
                                             </div>
+</div>
                                       
                 <div class="card-footer">
                   <button type="submit" class="btn btn-dark">Submit</button><br><br>
