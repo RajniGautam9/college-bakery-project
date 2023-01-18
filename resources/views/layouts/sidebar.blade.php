@@ -57,7 +57,7 @@
               </li>
             </ul> -->
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a href="{{asset('backend/pages/widgets.html')}}" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
@@ -65,8 +65,8 @@
                 <span class="right badge badge-danger">New</span>
               </p>
             </a>
-          </li>
-          <li class="nav-item">
+          </li> -->
+          <!-- <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
@@ -125,8 +125,8 @@
                 </a>
               </li>
             </ul>
-          </li>
-          <li class="nav-item">
+          </li> -->
+          <!-- <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-chart-pie"></i>
               <p>
@@ -160,7 +160,7 @@
                 </a>
               </li>
             </ul>
-          </li>
+          </li> -->
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-tree"></i>
@@ -249,7 +249,7 @@
 
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-user"></i>
+              <i class="nav-icon fas fa-store"></i>
               <p>
                Store
                 <i class="fas fa-angle-left right"></i>
@@ -272,7 +272,34 @@
              
             </ul>
           </li>
-          <li class="nav-item">
+
+
+           <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-bell"></i>
+              <p>
+              Notification
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{asset('notification/create')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Notification</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{asset('notification')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>View Notification</p>
+                </a>
+              </li>
+            
+             
+            </ul>
+          </li>
+          <!-- <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>
@@ -300,7 +327,7 @@
                 </a>
               </li>
             </ul>
-          </li>
+          </li> -->
           <li class="nav-header">EXAMPLES</li>
           <li class="nav-item">
             <a href="{{asset('backend/pages/calendar.html')}}" class="nav-link">
