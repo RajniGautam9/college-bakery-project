@@ -39,7 +39,7 @@ class DeliveryController extends Controller
         $request ->validate([
             'name' => 'required',
         ]);
-        delivery::create($request->all());
+       $delivery = delivery::create($request->all());
         return redirect()->back();
     }
 

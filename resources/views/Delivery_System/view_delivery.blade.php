@@ -1,21 +1,27 @@
 @extends('layouts.master')
 @section('content')
+<div class="content-wrapper">
 <div class="row">
           <div class="col-12">
             <div class="card">
               <div class="card-header">
                 <h3 class="card-title">Fixed Header Table</h3>
-                <button type="submit" class="btn btn-primary float-right">Add</button></td>
                 <div class="card-tools">
+                <button type="submit" class="btn btn-primary">Add Delivery</button>
                   <div class="input-group input-group-sm" style="width: 150px;">
                     <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
-
+                    
                     <div class="input-group-append">
                       <button type="submit" class="btn btn-default">
                         <i class="fas fa-search"></i>
+                        
                       </button>
+                      
+                     
                     </div>
+                   
                   </div>
+                  
                 </div>
               </div>
               <!-- /.card-header -->
@@ -29,11 +35,11 @@
                       <th>Phone</th>
                       <th>Payment</th>
                       <th>Status</th>
-                      
+                      <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
-                    @foreach $delivery as @delivery
+                    @foreach ($delivery as $delivery)
                     <tr>
                       <td>{{$loop->iteration}}</td>
                       <td>{{$delivery->name}}</td>
@@ -59,4 +65,5 @@
             <!-- /.card -->
           </div>
         </div>
+</div>
         @endsection

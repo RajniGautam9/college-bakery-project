@@ -202,37 +202,27 @@
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-edit"></i>
+              <i class="nav-icon fas fa-shipping-fast"></i>
               <p>
-                Forms
+                Delivery 
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{asset('backend/pages/forms/general.html')}}" class="nav-link">
+                <a href="{{asset('delivery/create')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>General Elements</p>
+                  <p>Add Delivery</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{asset('backend/pages/forms/advanced.html')}}" class="nav-link">
+                <a href="{{asset('delivery')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Advanced Elements</p>
+                  <p>View Delivery</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="{{asset('backend/pages/forms/editors.html')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Editors</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{asset('backend/pages/forms/validation.html')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Validation</p>
-                </a>
-              </li>
+             
+           
             </ul>
           </li>
           <li class="nav-item">

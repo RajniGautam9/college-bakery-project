@@ -57,7 +57,7 @@
 
                   <div class="form-group">
                     <label for="exampleInputPassword1">Payment</label>
-                    <select id="select" class="form-control" name="payment" value="{{$delivery->payment">
+                    <select id="select" class="form-control" name="payment" value="{{$delivery->payment}}">
                                                     <option value="cash">cash</option>
                                                     <option value="Debit card">Debit card</option>
                                                     <option value="credit card">credit card</option>

@@ -34,9 +34,9 @@
               <!-- form start -->
               <form>
                 <div class="card-body">
-                <form role="form" method="post">
+                <form role="form" method="post"  action="{{route('delivery.store')}}" enctype="multitype/form-data">
                                     
-                                    
+                   @csrf                 
                   <div class="form-group">
                     <label for="exampleInputEmail1">Name</label>
                     <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter name" name="name">
@@ -78,6 +78,7 @@
                 <div class="card-footer">
                   <button type="submit" class="btn btn-dark">Submit</button><br><br>
                 </div>
+                <br>
               </form>
             </div>
           </div>
