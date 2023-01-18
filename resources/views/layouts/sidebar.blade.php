@@ -328,7 +328,33 @@
               </li>
             </ul>
           </li> -->
-          <li class="nav-header">EXAMPLES</li>
+         
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-shopping-cart"></i>
+              <p>
+             Order
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{asset('order/create')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Order</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{asset('order')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>View Order</p>
+                </a>
+              </li>
+            
+             
+            </ul>
+          </li>
           <li class="nav-item">
             <a href="{{asset('backend/pages/calendar.html')}}" class="nav-link">
               <i class="nav-icon fas fa-calendar-alt"></i>
