@@ -32,7 +32,7 @@
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
-                <i class="right fas fa-angle-left"></i>
+               
               </p>
             </a>
             <!-- <ul class="nav nav-treeview">
@@ -220,6 +220,33 @@
               </li>
             </ul>
           </li>
+
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-bars"></i>
+              <p>
+               Brands
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{asset('brands/create')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Brands</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{asset('brands')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>View Brands</p>
+                </a>
+              </li>
+            
+             
+            </ul>
+          </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-user"></i>
@@ -358,7 +385,7 @@
 
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-user"></i>
+              <i class="nav-icon fas fa-tag"></i>
               <p>
              Company Profile
                 <i class="fas fa-angle-left right"></i>
