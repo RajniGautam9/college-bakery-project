@@ -36,12 +36,20 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
+       $imagename = Time().'.'.$request->file('image')->getClientOriginalExtension();
+        move_uploaded_file($request->image,'backend/image/'.$imagename);
+
+        
         $request->validate([
             'name' => 'required',
 
         ]);
-        customer::create($request->all());
-        return redirect()->back();
+       $customer = customer::create($request->all());
+       $customer->image = $imagename;
+       $customer->save();
+
+        return redirect()->route('customer.index');
+        return back()->with('success','customer upload successfully!');
     }
 
     /**
@@ -77,7 +85,17 @@ class CustomerController extends Controller
     public function update(Request $request, $id)
     {
          $customer = customer::find($id);
-         $customer->update($request->all());
+         $imagename = Time().'.'.$request->file('image')->getClientOriginalExtension();
+          move_uploaded_file($request->image,'backend/image/'.$imagename);
+         
+         $customer->image = $imagename;
+         $customer->name = $request->get('name');
+         $customer->phone = $request->get('phone');
+         $customer->address = $request->get('address');
+         $customer->gender = $request->get('gender');
+         $customer->email = $request->get('email');
+         $customer->status = $request->get('status');
+         $customer->save();
    
    
           return redirect()->route('customer.index')

@@ -43,7 +43,7 @@
                     <tr>
                       <td>{{$loop->iteration}}</td>
                       <td>{{$customer->name}}</td>
-                      <td>{{$customer->image}}</td> 
+                      <td><img src="{{asset('backend/image/'.$customer->image)}}" style="height:50px;width:50px;"></td>
                       <td>{{$customer->phone}}</td>
                       <td>{{$customer->address}}</td>
                       <td>{{$customer->gender}}</td>
