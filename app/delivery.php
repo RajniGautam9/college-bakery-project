@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class delivery extends Model
 {
-    protected $fillable=['id','name','address','phone','payment','status'];
+    protected $fillable= ['id','name','address','phone','payment','status'];
 }

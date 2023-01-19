@@ -30,3 +30,7 @@ Route::get('index', function () {
 });
 
 Route::resource('delivery','DeliveryController');
+
+Route::resource('category','CategoryController');
+
+Route::resource('faq','FaqController');

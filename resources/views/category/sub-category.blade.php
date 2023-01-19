@@ -7,7 +7,7 @@
               <div class="card-header">
                 <h3 class="card-title">Fixed Header Table</h3>
                 <div class="card-tools">
-                <button type="submit" class="btn btn-primary">Add Delivery</button><br><br>
+                <button type="submit" class="btn btn-primary">Add category</button><br><br>
                   <div class="input-group input-group-sm" style="width: 150px;">
                     <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
                     
@@ -31,24 +31,20 @@
                     <tr>
                       <th>ID</th>
                       <th>Name</th>
-                      <th>Address</th>
-                      <th>Phone</th>
-                      <th>Payment</th>
+                      <th>position</th>
                       <th>Status</th>
                       <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
-                    @foreach ($delivery as $delivery)
+                    @foreach ($category as $category)
                     <tr>
                       <td>{{$loop->iteration}}</td>
-                      <td>{{$delivery->name}}</td>
-                      <td>{{$delivery->address}}</td>
-                      <td>{{$delivery->phone}}</td>
-                      <td>{{$delivery->payment}}</td>
-                      <td>{{$delivery->status}}</td>
-                      <td><a href="{{route('delivery.edit',[$delivery->id])}}"> <button type="button" class="btn btn-sm">Edit</button></a>
-                                           <form role="form" method="post" action="{{route('delivery.destroy',[$delivery->id])}}">
+                      <td>{{$category->name}}</td>
+                      <td>{{$category->position}}</td>
+                      <td>{{$category->status}}</td>
+                      <td><a href="{{route('category.edit',[$category->id])}}"> <button type="button" class="btn btn-sm">Edit</button></a>
+                                           <form role="form" method="post" action="{{route('category.destroy',[$category->id])}}">
                                     @csrf  
                                     @method('DELETE')
                                            

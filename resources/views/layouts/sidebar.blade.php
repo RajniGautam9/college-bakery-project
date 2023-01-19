@@ -227,31 +227,52 @@
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-table"></i>
+              <i class="nav-icon fas fa-list-alt"></i>
               <p>
-                Tables
+                Category
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{asset('backend/pages/tables/simple.html')}}" class="nav-link">
+                <a href="{{asset('category/create')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Simple Tables</p>
+                  <p>Add Category</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{asset('backend/pages/tables/data.html')}}" class="nav-link">
+                <a href="{{asset('category')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>DataTables</p>
+                  <p>view Category</p>
+                </a>
+              </li>
+           
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-shipping-fast"></i>
+              <p>
+                FAQ'S
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{asset('faq/create')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add FAQ'S</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{asset('backend/pages/tables/jsgrid.html')}}" class="nav-link">
+                <a href="{{asset('faq')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>jsGrid</p>
+                  <p>View FAQ'S</p>
                 </a>
               </li>
+             
+           
             </ul>
           </li>
           <li class="nav-header">EXAMPLES</li>

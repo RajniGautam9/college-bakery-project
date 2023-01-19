@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\delivery;
+use App\faq;
 use Illuminate\Http\Request;
 
-class DeliveryController extends Controller
+class FaqController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class DeliveryController extends Controller
      */
     public function index()
     {
-        $delivery = delivery::all();
-        return view('Delivery_System.view_delivery', compact('delivery'));
+        $faq = faq::all();
+        return view('faq.view_faq', compact('faq'));
     }
 
     /**
@@ -25,7 +25,7 @@ class DeliveryController extends Controller
      */
     public function create()
     {
-        return view('Delivery_System.add_delivery');
+        return view('faq.add_faq');
     }
 
     /**
@@ -37,20 +37,19 @@ class DeliveryController extends Controller
     public function store(Request $request)
     {
         $request ->validate([
-            'name' => 'required',
+            'question' => 'required',
         ]);
-        
-        $delivery=delivery::create($request->all());
+       $faq = faq::create($request->all());
         return redirect()->back();
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\delivery  $delivery
+     * @param  \App\faq  $faq
      * @return \Illuminate\Http\Response
      */
-    public function show(delivery $delivery)
+    public function show(faq $faq)
     {
         //
     }
@@ -58,42 +57,42 @@ class DeliveryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\delivery  $delivery
+     * @param  \App\faq  $faq
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(faq $faq)
     {
-        $delivery = delivery::find($id);
-        return view('Delivery_System.edit_delivery', compact('delivery'));
+        $faq = faq::find($id);
+        return view('faq.edit_faq', compact('faq'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\delivery  $delivery
+     * @param  \App\faq  $faq
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, faq $faq)
     {
-        $delivery = delivery::find($id);
-        $delivery->update($request->all());
+        $faq = faq::find($id);
+        $faq->update($request->all());
                  
-        return redirect()->route('delivery.index')
-                 ->with('success',' delivery updated successfully');
+        return redirect()->route('faq.index')
+                 ->with('success',' faq updated successfully');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\delivery  $delivery
+     * @param  \App\faq  $faq
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(faq $faq)
     {
-        $delivery =delivery::find($id);
-        $delivery->delete();
+        $faq =faq::find($id);
+        $faq->delete();
 
-        return redirect()->route('delivery.index'); 
+        return redirect()->route('faq.index'); 
     }
 }

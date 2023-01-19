@@ -32,11 +32,11 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form>
-                <div class="card-body">
-                <form role="form" method="post" action="{{route('delivery.update',[$delivery->id])}}">
+              <form role="form" method="post" action="{{route('delivery.update',[$delivery->id])}}">
                                     @csrf
                                     @method('PUT') 
+                <div class="card-body">
+               
                   <div class="form-group">
                   <label for="exampleInputEmail1">Name</label>
                     <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter name" value="{{$delivery->name}}" name="name">

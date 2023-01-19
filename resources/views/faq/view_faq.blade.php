@@ -30,25 +30,19 @@
                   <thead>
                     <tr>
                       <th>ID</th>
-                      <th>Name</th>
-                      <th>Address</th>
-                      <th>Phone</th>
-                      <th>Payment</th>
-                      <th>Status</th>
+                      <th>Question</th>
+                      <th>Answer</th>
                       <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
-                    @foreach ($delivery as $delivery)
+                    @foreach ($faq as $faq)
                     <tr>
                       <td>{{$loop->iteration}}</td>
-                      <td>{{$delivery->name}}</td>
-                      <td>{{$delivery->address}}</td>
-                      <td>{{$delivery->phone}}</td>
-                      <td>{{$delivery->payment}}</td>
-                      <td>{{$delivery->status}}</td>
-                      <td><a href="{{route('delivery.edit',[$delivery->id])}}"> <button type="button" class="btn btn-sm">Edit</button></a>
-                                           <form role="form" method="post" action="{{route('delivery.destroy',[$delivery->id])}}">
+                      <td>{{$faq->question}}</td>
+                      <td>{{$faq->answer}}</td>
+                      <td><a href="{{route('faq.edit',[$faq->id])}}"> <button type="button" class="btn btn-sm">Edit</button></a>
+                                           <form role="form" method="post" action="{{route('faq.destroy',[$delivery->id])}}">
                                     @csrf  
                                     @method('DELETE')
                                            
