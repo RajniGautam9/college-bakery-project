@@ -32,12 +32,12 @@
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
-                <i class="right fas fa-angle-left"></i>
+               
               </p>
             </a>
             
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a href="{{asset('backend/pages/widgets.html')}}" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
@@ -45,8 +45,8 @@
                 <span class="right badge badge-danger">New</span>
               </p>
             </a>
-          </li>
-          <li class="nav-item">
+          </li> -->
+          <!-- <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
@@ -105,8 +105,8 @@
                 </a>
               </li>
             </ul>
-          </li>
-          <li class="nav-item">
+          </li> -->
+          <!-- <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-chart-pie"></i>
               <p>
@@ -140,7 +140,7 @@
                 </a>
               </li>
             </ul>
-          </li>
+          </li> -->
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-tree"></i>
@@ -200,16 +200,25 @@
               </li>
             </ul>
           </li>
+
+
           <li class="nav-item">
             <a href="#" class="nav-link">
+<<<<<<< HEAD
               <i class="nav-icon fas fa-shipping-fast"></i>
               <p>
                 Delivery 
+=======
+              <i class="nav-icon fas fa-bars"></i>
+              <p>
+               Brands
+>>>>>>> c66d10f53d0a8c64bc6e7ac348b8e5be88ba7b8f
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
+<<<<<<< HEAD
                 <a href="{{asset('delivery/create')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Add Delivery</p>
@@ -223,11 +232,109 @@
               </li>
              
            
+=======
+                <a href="{{asset('brands/create')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Brands</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{asset('brands')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>View Brands</p>
+                </a>
+              </li>
+            
+             
+>>>>>>> c66d10f53d0a8c64bc6e7ac348b8e5be88ba7b8f
             </ul>
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
+<<<<<<< HEAD
               <i class="nav-icon fas fa-list-alt"></i>
+=======
+              <i class="nav-icon fas fa-user"></i>
+              <p>
+                Customer
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{asset('customer/create')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Customer</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{asset('customer')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>View Customer</p>
+                </a>
+              </li>
+            
+             
+            </ul>
+          </li>
+
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-store"></i>
+              <p>
+               Store
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{asset('stores/create')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Store</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{asset('stores')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>View Store</p>
+                </a>
+              </li>
+            
+             
+            </ul>
+          </li>
+
+
+           <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-bell"></i>
+              <p>
+              Notification
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{asset('notification/create')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Notification</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{asset('notification')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>View Notification</p>
+                </a>
+              </li>
+            
+             
+            </ul>
+          </li>
+          <!-- <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-table"></i>
+>>>>>>> c66d10f53d0a8c64bc6e7ac348b8e5be88ba7b8f
               <p>
                 Category
                 <i class="fas fa-angle-left right"></i>
@@ -274,8 +381,60 @@
              
            
             </ul>
+          </li> -->
+         
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-shopping-cart"></i>
+              <p>
+             Order
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{asset('order/create')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Order</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{asset('order')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>View Order</p>
+                </a>
+              </li>
+            
+             
+            </ul>
           </li>
-          <li class="nav-header">EXAMPLES</li>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tag"></i>
+              <p>
+             Company Profile
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{asset('company/create')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Company Profile</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{asset('company')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>View Company Profile</p>
+                </a>
+              </li>
+            
+             
+            </ul>
+          </li>
           <li class="nav-item">
             <a href="{{asset('backend/pages/calendar.html')}}" class="nav-link">
               <i class="nav-icon fas fa-calendar-alt"></i>
