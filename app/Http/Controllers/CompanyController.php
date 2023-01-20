@@ -35,12 +35,20 @@ class CompanyController extends Controller
      */
     public function store(Request $request)
     {
+        $imagename = Time().'.'.$request->file('image')->getClientOriginalExtension();
+        move_uploaded_file($request->image,'backend/image/'.$imagename);
+
+        
         $request->validate([
             'name' => 'required',
 
         ]);
-        company::create($request->all());
-        return redirect()->back();
+       $company = company::create($request->all());
+       $company->image = $imagename;
+       $company->save();
+
+        return redirect()->route('company.index');
+        return back()->with('success','company upload successfully!');
     }
 
     /**
@@ -76,11 +84,21 @@ class CompanyController extends Controller
     public function update(Request $request, $id)
     {
         $company = company::find($id);
-        $company->update($request->all());
-  
-  
-         return redirect()->route('company.index')
-                          ->with('success','company updated successfully');
+        $imagename = Time().'.'.$request->file('image')->getClientOriginalExtension();
+        move_uploaded_file($request->image,'backend/image/'.$imagename);
+       
+       $company->image = $imagename;
+       $company->name = $request->get('name');
+       $company->email = $request->get('email');
+       $company->phone = $request->get('phone');
+       $company->address = $request->get('address');
+       $company->website = $request->get('website');
+       $company->details = $request->get('details');
+       $company->save();
+ 
+ 
+        return redirect()->route('company.index')
+                         ->with('success','company updated successfully');
     }
 
     /**
