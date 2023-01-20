@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\delivery;
 use Illuminate\Http\Request;
 use App\customer;
 
-class CustomerController extends Controller
+class DeliveryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +15,13 @@ class CustomerController extends Controller
      */
     public function index()
     {
+<<<<<<< HEAD:app/Http/Controllers/DeliveryController.php
+        $delivery = delivery::all();
+        return view('Delivery_System.view_delivery', compact('delivery'));
+=======
        $customer = customer::all();
        return view('customer.view_customer',compact('customer'));
+>>>>>>> c66d10f53d0a8c64bc6e7ac348b8e5be88ba7b8f:app/Http/Controllers/CustomerController.php
     }
 
     /**
@@ -25,7 +31,11 @@ class CustomerController extends Controller
      */
     public function create()
     {
+<<<<<<< HEAD:app/Http/Controllers/DeliveryController.php
+        return view('Delivery_System.add_delivery');
+=======
         return view('customer.add_customer');
+>>>>>>> c66d10f53d0a8c64bc6e7ac348b8e5be88ba7b8f:app/Http/Controllers/CustomerController.php
     }
 
     /**
@@ -36,6 +46,14 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
+<<<<<<< HEAD:app/Http/Controllers/DeliveryController.php
+        $request ->validate([
+            'name' => 'required',
+        ]);
+        
+        $delivery=delivery::create($request->all());
+        return redirect()->back();
+=======
        $imagename = Time().'.'.$request->file('image')->getClientOriginalExtension();
         move_uploaded_file($request->image,'backend/image/'.$imagename);
 
@@ -50,15 +68,16 @@ class CustomerController extends Controller
 
         return redirect()->route('customer.index');
         return back()->with('success','customer upload successfully!');
+>>>>>>> c66d10f53d0a8c64bc6e7ac348b8e5be88ba7b8f:app/Http/Controllers/CustomerController.php
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\delivery  $delivery
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(delivery $delivery)
     {
         //
     }
@@ -66,24 +85,36 @@ class CustomerController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\delivery  $delivery
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
+<<<<<<< HEAD:app/Http/Controllers/DeliveryController.php
+        $delivery = delivery::find($id);
+        return view('Delivery_System.edit_delivery', compact('delivery'));
+=======
        $customer = customer::find($id);
         return view('customer.edit_customer',compact('customer'));
+>>>>>>> c66d10f53d0a8c64bc6e7ac348b8e5be88ba7b8f:app/Http/Controllers/CustomerController.php
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\delivery  $delivery
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
+<<<<<<< HEAD:app/Http/Controllers/DeliveryController.php
+        $delivery = delivery::find($id);
+        $delivery->update($request->all());
+                 
+        return redirect()->route('delivery.index')
+                 ->with('success',' delivery updated successfully');
+=======
          $customer = customer::find($id);
          $imagename = Time().'.'.$request->file('image')->getClientOriginalExtension();
           move_uploaded_file($request->image,'backend/image/'.$imagename);
@@ -100,20 +131,28 @@ class CustomerController extends Controller
    
           return redirect()->route('customer.index')
                            ->with('success','customer updated successfully');
+>>>>>>> c66d10f53d0a8c64bc6e7ac348b8e5be88ba7b8f:app/Http/Controllers/CustomerController.php
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\delivery  $delivery
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
+<<<<<<< HEAD:app/Http/Controllers/DeliveryController.php
+        $delivery =delivery::find($id);
+        $delivery->delete();
+
+        return redirect()->route('delivery.index'); 
+=======
         $customer = customer::find($id);
 
         $customer->delete();
  
         return redirect()->route('customer.index');
+>>>>>>> c66d10f53d0a8c64bc6e7ac348b8e5be88ba7b8f:app/Http/Controllers/CustomerController.php
     }
 }
