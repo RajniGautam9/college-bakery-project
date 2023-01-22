@@ -26,7 +26,7 @@ class StoreController extends Controller
      */
     public function create()
     {
-        return view('stores.add_stores');
+        return view('stores.add_store');
     }
 
     /**

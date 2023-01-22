@@ -258,6 +258,31 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-store"></i>
               <p>
+              Delivery
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{asset('delivery/create')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Delivery</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{asset('delivery')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>View Delivery</p>
+                </a>
+              </li>
+            
+             
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-store"></i>
+              <p>
                Store
                 <i class="fas fa-angle-left right"></i>
               </p>
@@ -306,7 +331,7 @@
              
             </ul>
           </li>
-          <!-- <li class="nav-item">
+           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>
@@ -355,7 +380,7 @@
              
            
             </ul>
-          </li> -->
+          </li> 
          
 
           <li class="nav-item">
