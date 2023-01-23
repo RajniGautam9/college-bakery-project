@@ -46,3 +46,4 @@ Route::resource('order','OrderController');
 Route::resource('company','CompanyController');
 
 Route::resource('brands','BrandController');
+

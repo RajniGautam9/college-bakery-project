@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\company;
-class CompanyController extends Controller
+use App\customer;
+class CustomerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +13,8 @@ class CompanyController extends Controller
      */
     public function index()
     {
-        $company = company::all();
-       return view('company_profile.view_company',compact('company'));
+        $customer = customer::all();
+       return view('customer.view_customer',compact('customer'));
     }
 
     /**
@@ -24,7 +24,7 @@ class CompanyController extends Controller
      */
     public function create()
     {
-        return view('company_profile.add_company');
+        return view('customer.add_customer');
     }
 
     /**
@@ -43,12 +43,12 @@ class CompanyController extends Controller
             'name' => 'required',
 
         ]);
-       $company = company::create($request->all());
-       $company->image = $imagename;
-       $company->save();
+       $customer = customer::create($request->all());
+      $customer->image = $imagename;
+      $customer->save();
 
-        return redirect()->route('company.index');
-        return back()->with('success','company upload successfully!');
+        return redirect()->route('customer.index');
+        return back()->with('success','customer upload successfully!');
     }
 
     /**
@@ -70,8 +70,8 @@ class CompanyController extends Controller
      */
     public function edit($id)
     {
-        $company = company::find($id);
-        return view('company_profile.edit_company',compact('company'));
+        $customer = customer::find($id);
+        return view('customer.edit_customer',compact('customer'));
     }
 
     /**
@@ -83,22 +83,23 @@ class CompanyController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $company = company::find($id);
+        $customer = customer::find($id);
         $imagename = Time().'.'.$request->file('image')->getClientOriginalExtension();
         move_uploaded_file($request->image,'backend/image/'.$imagename);
        
-       $company->image = $imagename;
-       $company->name = $request->get('name');
-       $company->email = $request->get('email');
-       $company->phone = $request->get('phone');
-       $company->address = $request->get('address');
-       $company->website = $request->get('website');
-       $company->details = $request->get('details');
-       $company->save();
+       $customer->image = $imagename;
+       $customer->name = $request->get('name');
+      
+       $customer->phone = $request->get('phone');
+       $customer->address = $request->get('address');
+       $customer->gender = $request->get('gender');
+       $customer->email = $request->get('email');
+       $customer->status = $request->get('status');
+       $customer->save();
  
  
-        return redirect()->route('company.index')
-                         ->with('success','company updated successfully');
+        return redirect()->route('customer.index')
+                         ->with('success','customer updated successfully');
     }
 
     /**
@@ -109,10 +110,10 @@ class CompanyController extends Controller
      */
     public function destroy($id)
     {
-        $company = company::find($id);
+        $customer = customer::find($id);
 
-        $company->delete();
+        $customer->delete();
  
-        return redirect()->route('company.index');
+        return redirect()->route('customer.index');
     }
 }

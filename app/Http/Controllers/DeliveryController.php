@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\delivery;
 use Illuminate\Http\Request;
-
+use App\customer;
 
 class DeliveryController extends Controller
 {
@@ -87,7 +87,6 @@ class DeliveryController extends Controller
      */
     public function update(Request $request, $id)
     {
-
         $delivery = delivery::find($id);
         $delivery->update($request->all());
                  

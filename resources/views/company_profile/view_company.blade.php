@@ -47,7 +47,7 @@
                       <td>{{$company->phone}}</td>
                       <td>{{$company->address}}</td>
                       <td>{{$company->website}}</td>
-                      <td>{{$company->image}}</td>
+                      <td><img src="{{asset('backend/image/'.$company->image)}}" style="height:50px;width:50px;"></td>
                       <td>{{$company->details}}</td>
                      
 

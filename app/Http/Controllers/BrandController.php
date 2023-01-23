@@ -36,12 +36,20 @@ class BrandController extends Controller
      */
     public function store(Request $request)
     {
+        $imagename = Time().'.'.$request->file('image')->getClientOriginalExtension();
+        move_uploaded_file($request->image,'backend/image/'.$imagename);
+
+        
         $request->validate([
             'name' => 'required',
 
         ]);
-        brand::create($request->all());
-        return redirect()->back();
+       $brand = brand::create($request->all());
+       $brand->image = $imagename;
+       $brand->save();
+
+       return redirect()->route('brands.index');
+       return back()->with('success','brand upload successfully!');
     }
 
     /**
@@ -76,12 +84,20 @@ class BrandController extends Controller
      */
     public function update(Request $request, $id)
     {
+        
         $brand = brand::find($id);
-        $brand->update($request->all());
-  
-  
-         return redirect()->route('brands.index')
-                          ->with('success','brand updated successfully');
+        $imagename = Time().'.'.$request->file('image')->getClientOriginalExtension();
+        move_uploaded_file($request->image,'backend/image/'.$imagename);
+       
+       $brand->image = $imagename;
+       $brand->name = $request->get('name');
+       $brand->category = $request->get('category');
+       $brand->status = $request->get('status');
+       $brand->save();
+ 
+ 
+        return redirect()->route('brands.index')
+                         ->with('success','brand updated successfully');
     }
 
     /**
