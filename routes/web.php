@@ -29,19 +29,20 @@ Route::get('index', function () {
     
 });
 
-<<<<<<< HEAD
 Route::resource('delivery','DeliveryController');
 
 Route::resource('category','CategoryController');
 
 Route::resource('faq','FaqController');
-=======
 
 Route::resource('customer','CustomerController');
-Route::resource('stores','StoreController');
-Route::resource('notification','NotificationController');
-Route::resource('order','OrderController');
-Route::resource('company','CompanyController');
-Route::resource('brands','BrandController');
 
->>>>>>> c66d10f53d0a8c64bc6e7ac348b8e5be88ba7b8f
+Route::resource('stores','StoreController');
+
+Route::resource('notification','NotificationController');
+
+Route::resource('order','OrderController');
+
+Route::resource('company','CompanyController');
+
+Route::resource('brands','BrandController');

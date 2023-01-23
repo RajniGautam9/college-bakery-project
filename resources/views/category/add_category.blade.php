@@ -32,14 +32,14 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form role="form" method="post"  action="{{route('category.store')}}" enctype="multitype/form-data">
+              <form role="form" method="post"  action="{{route('category.store')}}" enctype="multipart/form-data">
               @csrf     
               <div class="card-body">
                 
                                     
                                 
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Name</label>
+                    <label for="exampleInputEmail1"> Category Name</label>
                     <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter name" name="name">
                   </div>
 
@@ -47,16 +47,21 @@
                     <label for="exampleInputFile">Image</label>
                     <div class="input-group">
                       <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="exampleInputFile" name="image" >
                         <input type="file" class="custom-file-input" id="exampleInputFile" name="image">
                         <label class="custom-file-label" for="exampleInputFile">Choose file</label>
                       </div>
-</div>
-</div>
+                      <div class="input-group-append">
+                        <span class="input-group-text">Upload</span>
+                      </div>
+                    </div>
+                  </div>
+
                
 
                   <div class="form-group">
                     <label for="exampleInputEmail1">Total Item</label>
-                    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Enter number of items" name="totalitem">
+                    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Enter number of items" name="item">
                   </div>
 
                  
@@ -77,5 +82,6 @@
             </div>
           </div>
           </div> 
+
             <!-- /.card -->
 @endsection

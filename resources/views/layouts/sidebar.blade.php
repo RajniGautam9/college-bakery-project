@@ -204,21 +204,16 @@
 
           <li class="nav-item">
             <a href="#" class="nav-link">
-<<<<<<< HEAD
+
               <i class="nav-icon fas fa-shipping-fast"></i>
               <p>
                 Delivery 
-=======
-              <i class="nav-icon fas fa-bars"></i>
-              <p>
-               Brands
->>>>>>> c66d10f53d0a8c64bc6e7ac348b8e5be88ba7b8f
                 <i class="fas fa-angle-left right"></i>
-              </p>
+                </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-<<<<<<< HEAD
+
                 <a href="{{asset('delivery/create')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Add Delivery</p>
@@ -230,11 +225,21 @@
                   <p>View Delivery</p>
                 </a>
               </li>
-             
-           
-=======
-                <a href="{{asset('brands/create')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+</ul>
+</li>
+
+              <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-bars"></i>
+              <p>
+               Brands
+               <i class="fas fa-angle-left right"></i>
+               </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+              <a href="{{asset('brands/create')}}" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
                   <p>Add Brands</p>
                 </a>
               </li>
@@ -245,15 +250,13 @@
                 </a>
               </li>
             
-             
->>>>>>> c66d10f53d0a8c64bc6e7ac348b8e5be88ba7b8f
+        
             </ul>
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-<<<<<<< HEAD
-              <i class="nav-icon fas fa-list-alt"></i>
-=======
+
+              
               <i class="nav-icon fas fa-user"></i>
               <p>
                 Customer
@@ -331,10 +334,10 @@
              
             </ul>
           </li>
-          <!-- <li class="nav-item">
+           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
->>>>>>> c66d10f53d0a8c64bc6e7ac348b8e5be88ba7b8f
+
               <p>
                 Category
                 <i class="fas fa-angle-left right"></i>
@@ -381,7 +384,7 @@
              
            
             </ul>
-          </li> -->
+          </li> 
          
 
           <li class="nav-item">
