@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\brand;
+use App\category;
 use Illuminate\Http\Request;
 
 class BrandController extends Controller
@@ -25,7 +26,8 @@ class BrandController extends Controller
      */
     public function create()
     {
-        return view('brand.add_brand');
+        $category = category::all();
+        return view('brand.add_brand',compact('category'));
     }
 
     /**
@@ -72,7 +74,8 @@ class BrandController extends Controller
     public function edit($id)
     {
         $brand = brand::find($id);
-        return view('brand.edit_brand',compact('brand'));
+        $category = category::all();
+        return view('brand.edit_brand',compact('brand','category'));
     }
 
     /**
@@ -91,7 +94,7 @@ class BrandController extends Controller
        
        $brand->image = $imagename;
        $brand->name = $request->get('name');
-       $brand->category = $request->get('category');
+       $brand->category_id = $request->get('category_id');
        $brand->status = $request->get('status');
        $brand->save();
  

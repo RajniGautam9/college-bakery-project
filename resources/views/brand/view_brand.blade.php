@@ -42,7 +42,7 @@
                       <td>{{$brand->name}}</td>
                       <td><img src="{{asset('backend/image/'.$brand->image)}}" style="height:50px;width:50px;"></td>
                     
-                      <td>{{$brand->category}}</td>
+                      <td>{{$brand->category->name}}</td>
                      
                       <td>{{$brand->status}}</td>
                      

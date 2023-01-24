@@ -4,7 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+
+
 class brand extends Model
 {
-    protected $fillable = ['id','name','image','category','status'];
+
+    public function category()
+{
+    return $this->belongsTo(category::class);
+}
+    protected $fillable = ['id','name','image','category_id','status'];
 }
