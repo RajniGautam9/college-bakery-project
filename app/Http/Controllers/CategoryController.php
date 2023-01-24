@@ -98,9 +98,18 @@ class CategoryController extends Controller
         
       $category->image = $imagename;
      
+<<<<<<< HEAD
         $category->name = $request->get('name');
         $category->item = $request->get('item');
         $category->status = $request->get('status');
+=======
+        $category-> image = $imagename;
+        $category->name = $request->get('name');
+        $category->item = $request->get('item');
+        $category->status= $request->get('status');
+
+       
+>>>>>>> a2b5a096b2ccb56be4d86d21a17286c4ad8ce488
         $category->save();
         return redirect()->route('category.index')
                         ->with('success','category updated successfully');
