@@ -32,13 +32,13 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form role="form" method="post" action="{{route('category.update',[$category->id])}}">
+              <form role="form" method="post" action="{{route('category.update',[$category->id])}}" enctype="multipart/form-data">
                                     @csrf
                                     @method('PUT') 
                 <div class="card-body">
                 
                   <div class="form-group">
-                  <label for="exampleInputEmail1">Name</label>
+                  <label for="exampleInputEmail1"> Category Name</label>
                     <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter name" value="{{$category->name}}" name="name">
                   </div>
 
@@ -49,10 +49,15 @@
                         <input type="file" class="custom-file-input" id="exampleInputFile" name="image">
                         <label class="custom-file-label" for="exampleInputFile">Choose file</label>
                       </div>
+                      <div class="input-group-append">
+                        <span class="input-group-text">Upload</span>
+                      </div>
+                    </div>
+                  </div>
                   
                   <div class="form-group">
                     <label for="exampleInputPassword1">Total Item</label>
-                    <input type="totalitem" class="form-control" id="exampleInputPassword1" placeholder="Enter Items" value="{{$category->totalitem}}" name="address">
+                    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Enter Items" value="{{$category->item}}" name="item">
                   </div>
 
                  
@@ -72,3 +77,4 @@
           </div>
             <!-- /.card -->
 @endsection
+

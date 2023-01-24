@@ -94,7 +94,10 @@ class CategoryController extends Controller
         move_uploaded_file($request->image, 'backend/image/'.$imagename);
      
         $category-> image = $imagename;
-     
+        $category->name = $request->get('name');
+        $category->item = $request->get('item');
+        $category->status= $request->get('status');
+
        
         $category->save();
         return redirect()->route('category.index')

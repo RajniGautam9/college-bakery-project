@@ -56,7 +56,13 @@
 
                   <div class="form-group">
                     <label for="exampleInputPassword1">Category</label>
-                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter category" name="category">
+                     <select id="select" class="form-control" name="category_id">
+                                        @foreach($category as $categorys)
+                                            <option value="{{$categorys->id}}">{{$categorys->name}}</option>
+                                         @endforeach
+                                            </select>
+                    
+                                            
                   </div>
 
                 

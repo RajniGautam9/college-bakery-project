@@ -42,8 +42,8 @@
                     <tr>
                       <td>{{$loop->iteration}}</td>
                       <td>{{$category->name}}</td>
-                      <td><img src="{{asset('backend/image/'.$category->image)}}" style="height:auto; width:50px;"></td>
-                      <td>{{$category->totalitem}}</td>
+                      <td><img src="{{asset('backend/image/'.$category->image)}}" style="height:50px; width:50px;"></td>
+                      <td>{{$category->item}}</td>
                       <td>{{$category->status}}</td>
                       <td><a href="{{route('category.edit',[$category->id])}}"> <button type="button" class="btn btn-sm">Edit</button></a>
                                            <form role="form" method="post" action="{{route('category.destroy',[$category->id])}}">
