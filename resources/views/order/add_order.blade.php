@@ -39,7 +39,11 @@
 
               <div class="form-group">
                     <label for="exampleInputEmail1">Customer-Name</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter customer name" name="name">
+                    <select id="select" class="form-control" name="customer_id" type="text">
+                                                @foreach($customer as $customers)
+                                                <option value="{{$customers->id}}">{{$customers->name}}</option>
+                                                @endforeach
+                                            </select>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Order No</label>
