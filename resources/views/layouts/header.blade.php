@@ -146,6 +146,24 @@
           <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
         </div>
       </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#">
+          <i class="far fa-user"></i>
+          
+        </a>
+        <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
+          <a href="#" class="dropdown-item">
+            <i class="fa fa-user fa-fw mr-2"></i> User Profile
+             </a>
+         <a href="#" class="dropdown-item">
+            <i class="fa fa-sign-out fa-fw mr-2"></i> Log Out
+            
+          </a>
+          
+          
+        </div>
+      </li>
+      
       <li class="nav-item">
         <a class="nav-link" data-widget="fullscreen" href="#" role="button">
           <i class="fas fa-expand-arrows-alt"></i>

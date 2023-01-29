@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\delivery;
 use Illuminate\Http\Request;
-use App\customer;
+
 
 class DeliveryController extends Controller
 {
@@ -15,16 +15,11 @@ class DeliveryController extends Controller
      */
     public function index()
     {
-<<<<<<< HEAD
 
         $delivery = delivery::all();
         return view('Delivery_System.view_delivery', compact('delivery'));
 
      
-=======
-       $delivery = delivery::all();
-       return view('Delivery_System.view_delivery',compact('delivery'));
->>>>>>> a2b5a096b2ccb56be4d86d21a17286c4ad8ce488
     }
 
     /**

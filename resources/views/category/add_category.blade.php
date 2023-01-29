@@ -40,13 +40,10 @@
                                 
                   <div class="form-group">
                     <label for="exampleInputEmail1">Category_Name</label>
-<<<<<<< HEAD
-                    <label for="exampleInputEmail1"> Category Name</label>
-=======
->>>>>>> a2b5a096b2ccb56be4d86d21a17286c4ad8ce488
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter name" name="name">
+                     <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter name" name="name">
                   </div>
-
+                  
+                  
                   <div class="form-group">
                     <label for="exampleInputFile">Image</label>
                     <div class="input-group">
