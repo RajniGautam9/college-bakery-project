@@ -146,6 +146,46 @@
           <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
         </div>
       </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#">
+        
+          <i class="far fa-user"></i>
+          
+         
+       
+        <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
+          <a href="{{asset('profile')}}" class="dropdown-item">
+            <!-- Message Start -->
+           
+            
+             
+                <h3 class="dropdown-item-title"><i class="fas fa-user mr-2"></i>
+                  User Profile
+                 
+                </h3>
+               
+               
+            <!-- Message End -->
+          </a>
+         
+          <a href="#" class="dropdown-item">
+            <!-- Message Start -->
+           
+                <h3 class="dropdown-item-title"><i class="fas fa-home mr-2"></i>
+                 Logout
+                 
+                </h3>
+                
+                
+            
+            <!-- Message End -->
+          </a>
+        
+      </li>
+          
+</a>  
+</li>
+      
       <li class="nav-item">
         <a class="nav-link" data-widget="fullscreen" href="#" role="button">
           <i class="fas fa-expand-arrows-alt"></i>
@@ -156,7 +196,10 @@
           <i class="fas fa-th-large"></i>
         </a>
       </li>
+
+    
     </ul>
+
   </nav>
   <!-- /.navbar -->
 

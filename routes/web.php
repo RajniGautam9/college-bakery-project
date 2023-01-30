@@ -41,4 +41,6 @@ Route::resource('notification','NotificationController');
 Route::resource('order','OrderController');
 Route::resource('company','CompanyController');
 Route::resource('brands','BrandController');
+Route::resource('user','UserController');
+Route::resource('profile','profileController');
 
