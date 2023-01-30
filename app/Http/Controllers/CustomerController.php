@@ -94,7 +94,7 @@ class CustomerController extends Controller
        $customer->address = $request->get('address');
        $customer->gender = $request->get('gender');
        $customer->email = $request->get('email');
-       $customer->status = $request->get('status');
+      
        $customer->save();
  
  
@@ -115,5 +115,23 @@ class CustomerController extends Controller
         $customer->delete();
  
         return redirect()->route('customer.index');
+    }
+
+    public function onStatus(Request $request, $id)
+    {
+        $status = customer::find($id);
+        $status-> status = 'on';
+        $status->save();
+        return redirect()->route('customer.index')
+            ->with('success','Status Active successfully.');
+    }
+
+    public function offStatus(Request $request, $id)
+    {
+        $status = customer::find($id);
+        $status-> status = 'off';
+        $status->save();
+        return redirect()->route('customer.index')
+            ->with('success','Status DeActive successfully.');
     }
 }

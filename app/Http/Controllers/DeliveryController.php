@@ -112,4 +112,22 @@ class DeliveryController extends Controller
      
     
 }
+
+public function onStatus(Request $request, $id)
+{
+    $status = delivery::find($id);
+    $status-> status = 'on';
+    $status->save();
+    return redirect()->route('delivery.index')
+        ->with('success','Status Active successfully.');
+}
+
+public function offStatus(Request $request, $id)
+{
+    $status = delivery::find($id);
+    $status-> status = 'off';
+    $status->save();
+    return redirect()->route('delivery.index')
+        ->with('success','Status DeActive successfully.');
+}
 }

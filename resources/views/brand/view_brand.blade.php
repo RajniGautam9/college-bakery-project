@@ -41,12 +41,20 @@
                       <td>{{$loop->iteration}}</td>
                       <td>{{$brand->name}}</td>
                       <td><img src="{{asset('backend/image/'.$brand->image)}}" style="height:50px;width:50px;"></td>
-                    
                       <td>{{$brand->category->name}}</td>
-                     
-                      <td>{{$brand->status}}</td>
-                     
+                      <td class="centre" style="display:flex;">
+                          
+                          @if($brand['status']=='on')                              
+                              <a href="{{ url('brands/offStatus',$brand->id) }}"><button class="btn btn-danger btn-sm" type="reset">De-Active</button></a>
 
+                                @else($brand['status']=='off') 
+                                  <a href="{{ url('brands/onStatus',$brand->id) }}"><button class="btn btn-warning btn-sm" type="reset">Active</button></a>
+
+                            @endif
+                             &nbsp;
+                             <button class="btn btn-info btn-sm" data-toggle="modal" data-target="#viewBatch{{$brand->id}}"><i class="fas fa-eye"></i></button> 
+                            &nbsp;
+</td>
                       
                      <td class="center"> <a href="{{route('brands.edit',[$brand->id])}}"><button class="btn btn-sm btn-danger">Edit</button></a>
 

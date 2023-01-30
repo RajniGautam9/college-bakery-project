@@ -48,6 +48,7 @@ class BrandController extends Controller
         ]);
        $brand = brand::create($request->all());
        $brand->image = $imagename;
+      
        $brand->save();
 
        return redirect()->route('brands.index');
@@ -95,7 +96,6 @@ class BrandController extends Controller
        $brand->image = $imagename;
        $brand->name = $request->get('name');
        $brand->category_id = $request->get('category_id');
-       $brand->status = $request->get('status');
        $brand->save();
  
  
@@ -117,4 +117,27 @@ class BrandController extends Controller
  
         return redirect()->route('brands.index');
     }
+
+
+
+    public function onStatus(Request $request, $id)
+    {
+        $status = brand::find($id);
+        $status-> status = 'on';
+        $status->save();
+        return redirect()->route('brands.index')
+            ->with('success','Status Active successfully.');
+    }
+
+    public function offStatus(Request $request, $id)
+    {
+        $status = brand::find($id);
+        $status-> status = 'off';
+        $status->save();
+        return redirect()->route('brands.index')
+            ->with('success','Status DeActive successfully.');
+    }
 }
+
+
+

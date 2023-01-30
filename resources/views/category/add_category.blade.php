@@ -37,7 +37,7 @@
               <div class="card-body">
                 
                                     
-                                
+       
                   <div class="form-group">
                     <label for="exampleInputEmail1">Category_Name</label>
                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter name" name="name">

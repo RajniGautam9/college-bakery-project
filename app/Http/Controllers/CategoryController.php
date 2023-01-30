@@ -98,18 +98,9 @@ class CategoryController extends Controller
         
       $category->image = $imagename;
      
-<<<<<<< HEAD
         $category->name = $request->get('name');
         $category->item = $request->get('item');
-        $category->status = $request->get('status');
-=======
-        $category-> image = $imagename;
-        $category->name = $request->get('name');
-        $category->item = $request->get('item');
-        $category->status= $request->get('status');
-
        
->>>>>>> a2b5a096b2ccb56be4d86d21a17286c4ad8ce488
         $category->save();
         return redirect()->route('category.index')
                         ->with('success','category updated successfully');
@@ -127,5 +118,24 @@ class CategoryController extends Controller
         $category->delete();
 
         return redirect()->route('category.index'); 
+    }
+
+
+    public function onStatus(Request $request, $id)
+    {
+        $status = category::find($id);
+        $status-> status = 'on';
+        $status->save();
+        return redirect()->route('category.index')
+            ->with('success','Status Active successfully.');
+    }
+
+    public function offStatus(Request $request, $id)
+    {
+        $status = category::find($id);
+        $status-> status = 'off';
+        $status->save();
+        return redirect()->route('category.index')
+            ->with('success','Status DeActive successfully.');
     }
 }

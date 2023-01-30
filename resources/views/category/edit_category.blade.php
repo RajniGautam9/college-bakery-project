@@ -61,13 +61,8 @@
                   </div>
 
                  
-                 <div class="form-group">
-                                                 <label for="field" name="status" required>Status</label> 
-                                                <select id="select" class="form-control" name="status" value="{{$category->status}}">
-                                                    <option value="Active">Active</option>
-                                                    <option value="Deactive">Inactive</option>
-                                                </select>
-                                            </div>
+              
+                                               
                                       
                 <div class="card-footer">
                   <button type="submit" class="btn btn-dark">Submit</button><br><br>

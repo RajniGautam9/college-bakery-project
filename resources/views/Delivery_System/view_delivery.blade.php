@@ -46,7 +46,21 @@
                       <td>{{$delivery->address}}</td>
                       <td>{{$delivery->phone}}</td>
                       <td>{{$delivery->payment}}</td>
-                      <td>{{$delivery->status}}</td>
+                    
+
+                      <td class="centre" style="display:flex;">
+                          
+                          @if($delivery['status']=='on')                              
+                              <a href="{{ url('delivery/offStatus',$delivery->id) }}"><button class="btn btn-danger btn-sm" type="reset">De-Active</button></a>
+
+                                @else($delivery['status']=='off') 
+                                  <a href="{{ url('delivery/onStatus',$delivery->id) }}"><button class="btn btn-warning btn-sm" type="reset">Active</button></a>
+
+                            @endif
+                             &nbsp;
+                             <button class="btn btn-info btn-sm" data-toggle="modal" data-target="#viewBatch{{$delivery->id}}"><i class="fas fa-eye"></i></button> 
+                            &nbsp;
+</td>
                       <td><a href="{{route('delivery.edit',[$delivery->id])}}"> <button type="button" class="btn btn-sm">Edit</button></a>
                                            <form role="form" method="post" action="{{route('delivery.destroy',[$delivery->id])}}">
                                     @csrf  
