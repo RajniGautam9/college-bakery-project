@@ -97,6 +97,24 @@ class StoreController extends Controller
 
         $store->delete();
  
-        return redirect()->route('store.index');
+        return redirect()->route('stores.index');
+    }
+
+    public function onStatus(Request $request, $id)
+    {
+        $status = store::find($id);
+        $status-> status = 'on';
+        $status->save();
+        return redirect()->route('stores.index')
+            ->with('success','Status Active successfully.');
+    }
+
+    public function offStatus(Request $request, $id)
+    {
+        $status = store::find($id);
+        $status-> status = 'off';
+        $status->save();
+        return redirect()->route('stores.index')
+            ->with('success','Status DeActive successfully.');
     }
 }

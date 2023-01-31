@@ -155,7 +155,7 @@
           <a href="#" class="dropdown-item">
             <i class="fa fa-user fa-fw mr-2"></i> User Profile
              </a>
-         <a href="#" class="dropdown-item">
+         <a href="{{asset('logout')}}" class="dropdown-item">
             <i class="fa fa-sign-out fa-fw mr-2"></i> Log Out
             
           </a>

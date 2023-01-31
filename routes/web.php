@@ -76,3 +76,18 @@ Route::get('delivery/offStatus/{id}',[App\Http\Controllers\DeliveryController::c
 // ================== notification Status Update route =============================
 Route::get('notification/onStatus/{id}',[App\Http\Controllers\NotificationController::class, 'onStatus']);
 Route::get('notification/offStatus/{id}',[App\Http\Controllers\NotificationController::class, 'offStatus']);
+
+// ------------- Status active or deactive ----------------------- 
+// ================== order Status Update route =============================
+Route::get('order/onStatus/{id}',[App\Http\Controllers\OrderController::class, 'onStatus']);
+Route::get('order/offStatus/{id}',[App\Http\Controllers\OrderController::class, 'offStatus']);
+
+// ------------- Status active or deactive ----------------------- 
+// ================== stores Status Update route =============================
+Route::get('stores/onStatus/{id}',[App\Http\Controllers\StoreController::class, 'onStatus']);
+Route::get('stores/offStatus/{id}',[App\Http\Controllers\StoreController::class, 'offStatus']);
+
+Auth::routes();
+
+Route::get('/home', 'DashboardController@index')->name('home');
+Route::get('logout','\App\Http\Controllers\Auth\LoginController@logout');

@@ -52,7 +52,19 @@
                       <td>{{$store->city}}</td>
                       <td>{{$store->email}}</td>
                       <td>{{$store->mobile}}</td>
-                      <td>{{$store->status}}</td>
+                      <td class="centre" style="display:flex;">
+                          
+                          @if($store['status']=='on')                              
+                              <a href="{{ url('stores/offStatus',$store->id) }}"><button class="btn btn-danger btn-sm" type="reset">De-Active</button></a>
+
+                                @else($store['status']=='off') 
+                                  <a href="{{ url('stores/onStatus',$store->id) }}"><button class="btn btn-warning btn-sm" type="reset">Active</button></a>
+
+                            @endif
+                             &nbsp;
+                             <button class="btn btn-info btn-sm" data-toggle="modal" data-target="#viewBatch{{$store->id}}"><i class="fas fa-eye"></i></button> 
+                            &nbsp;
+</td>
                      
 
                       

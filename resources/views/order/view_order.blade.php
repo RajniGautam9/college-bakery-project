@@ -50,7 +50,19 @@
                       <td>{{$order->tamount}}</td> 
                       <td>{{$order->payment}}</td> 
                       <td>{{$order->message}}</td>
-                      <td>{{$order->status}}</td>
+                      <td class="centre" style="display:flex;">
+                          
+                          @if($order['status']=='on')                              
+                              <a href="{{ url('order/offStatus',$order->id) }}"><button class="btn btn-danger btn-sm" type="reset">De-Active</button></a>
+
+                                @else($order['status']=='off') 
+                                  <a href="{{ url('order/onStatus',$order->id) }}"><button class="btn btn-warning btn-sm" type="reset">Active</button></a>
+
+                            @endif
+                             &nbsp;
+                             <button class="btn btn-info btn-sm" data-toggle="modal" data-target="#viewBatch{{$order->id}}"><i class="fas fa-eye"></i></button> 
+                            &nbsp;
+</td>
                      
 
                       
