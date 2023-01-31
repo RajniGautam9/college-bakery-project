@@ -15,8 +15,11 @@ class DeliveryController extends Controller
      */
     public function index()
     {
-       $delivery = delivery::all();
-       return view('Delivery_System.view_delivery',compact('delivery'));
+
+        $delivery = delivery::all();
+        return view('Delivery_System.view_delivery', compact('delivery'));
+
+     
     }
 
     /**
@@ -26,7 +29,9 @@ class DeliveryController extends Controller
      */
     public function create()
     {
+
         return view('Delivery_System.add_delivery');
+        
     }
 
     /**
@@ -37,12 +42,14 @@ class DeliveryController extends Controller
      */
     public function store(Request $request)
     {
-        $request ->validate([
-            'name' => 'required',
-        ]);
+    $request ->validate([
+        'name' => 'required',
+    ]);
         
         $delivery=delivery::create($request->all());
         return redirect()->back();
+
+
     }
 
     /**
@@ -64,8 +71,11 @@ class DeliveryController extends Controller
      */
     public function edit($id)
     {
+ 
         $delivery = delivery::find($id);
         return view('Delivery_System.edit_delivery', compact('delivery'));
+ 
+      
     }
 
     /**
@@ -82,6 +92,8 @@ class DeliveryController extends Controller
                  
         return redirect()->route('delivery.index')
                  ->with('success',' delivery updated successfully');
+
+        
     }
 
     /**
@@ -92,9 +104,30 @@ class DeliveryController extends Controller
      */
     public function destroy($id)
     {
+
         $delivery =delivery::find($id);
         $delivery->delete();
 
-        return redirect()->route('delivery.index'); 
-    }
+        return redirect()->route('delivery.index');
+     
+    
+}
+
+public function onStatus(Request $request, $id)
+{
+    $status = delivery::find($id);
+    $status-> status = 'on';
+    $status->save();
+    return redirect()->route('delivery.index')
+        ->with('success','Status Active successfully.');
+}
+
+public function offStatus(Request $request, $id)
+{
+    $status = delivery::find($id);
+    $status-> status = 'off';
+    $status->save();
+    return redirect()->route('delivery.index')
+        ->with('success','Status DeActive successfully.');
+}
 }

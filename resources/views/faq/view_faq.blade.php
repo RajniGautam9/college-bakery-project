@@ -7,7 +7,7 @@
               <div class="card-header">
                 <h3 class="card-title">Fixed Header Table</h3>
                 <div class="card-tools">
-                <button type="submit" class="btn btn-primary">Add Delivery</button><br><br>
+                <button type="submit" class="btn btn-primary">Add FAQ</button><br><br>
                   <div class="input-group input-group-sm" style="width: 150px;">
                     <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
                     

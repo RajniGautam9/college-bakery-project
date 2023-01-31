@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\order;
+use App\customer;
+
 class OrderController extends Controller
 {
     /**
@@ -24,7 +26,8 @@ class OrderController extends Controller
      */
     public function create()
     {
-        return view('order.add_order');
+        $customer = customer::all();
+        return view('order.add_order',compact('customer'));
     }
 
     /**
@@ -63,7 +66,8 @@ class OrderController extends Controller
     public function edit($id)
     {
         $order = order::find($id);
-        return view('order.edit_order',compact('order'));
+        $customer = customer::all();
+        return view('order.edit_order',compact('order','customer'));
     }
 
     /**
@@ -78,6 +82,15 @@ class OrderController extends Controller
        
         $order = order::find($id);
         $order->update($request->all());
+
+        $order->customer_id = $request->get('customer_id');
+        $order->order = $request->get('order');
+        $order->amount = $request->get('amount');
+        $order->discount = $request->get('discount');
+        $order->tamount = $request->get('tamount');
+        $order->payment = $request->get('payment');
+        $order->message = $request->get('message');
+        $order->status = $request->get('status');
   
   
          return redirect()->route('order.index')

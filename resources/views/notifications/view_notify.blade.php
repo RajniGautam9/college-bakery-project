@@ -42,9 +42,19 @@
                       <td>{{$notification->device}}</td>
                       <td>{{$notification->title}}</td> 
                       <td>{{$notification->message}}</td>
-                      <td>{{$notification->status}}</td>
-                     
+                      <td class="centre" style="display:flex;">
+                          
+                          @if($notification['status']=='on')                              
+                              <a href="{{ url('notification/offStatus',$notification->id) }}"><button class="btn btn-danger btn-sm" type="reset">De-Active</button></a>
 
+                                @else($notification['status']=='off') 
+                                  <a href="{{ url('notification/onStatus',$notification->id) }}"><button class="btn btn-warning btn-sm" type="reset">Active</button></a>
+
+                            @endif
+                             &nbsp;
+                             <button class="btn btn-info btn-sm" data-toggle="modal" data-target="#viewBatch{{$notification->id}}"><i class="fas fa-eye"></i></button> 
+                            &nbsp;
+</td>
                       
                      <td class="center"> <a href="{{route('notification.edit',[$notification->id])}}"><button class="btn btn-sm btn-danger">Edit</button></a>
 

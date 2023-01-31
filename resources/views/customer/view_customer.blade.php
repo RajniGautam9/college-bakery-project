@@ -48,8 +48,19 @@
                       <td>{{$customer->address}}</td>
                       <td>{{$customer->gender}}</td>
                       <td>{{$customer->email}}</td>
-                      <td>{{$customer->status}}</td>
-                     
+                      <td class="centre" style="display:flex;">
+                          
+                          @if($customer['status']=='on')                              
+                              <a href="{{ url('customer/offStatus',$customer->id) }}"><button class="btn btn-danger btn-sm" type="reset">De-Active</button></a>
+
+                                @else($brand['status']=='off') 
+                                  <a href="{{ url('customer/onStatus',$customer->id) }}"><button class="btn btn-warning btn-sm" type="reset">Active</button></a>
+
+                            @endif
+                             &nbsp;
+                             <button class="btn btn-info btn-sm" data-toggle="modal" data-target="#viewBatch{{$customer->id}}"><i class="fas fa-eye"></i></button> 
+                            &nbsp;
+</td>
 
                       
                      <td class="center"> <a href="{{route('customer.edit',[$customer->id])}}"><button class="btn btn-sm btn-danger">Edit</button></a>

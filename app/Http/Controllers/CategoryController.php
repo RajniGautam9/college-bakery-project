@@ -36,23 +36,24 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $imagename = Time() .'.'.$request->file('image')->getClientOriginalExtension();
+        $imagename = Time().'.'.$request->file('image')->getClientOriginalExtension();
         move_uploaded_file($request->image,'backend/image/'.$imagename);
-        
-      
+
         $request->validate([
-          'name' => 'required',  
-          
+            'name' => 'required',
+
         ]);
-    
-        $category = category::create($request->all());
-        $category->image = $imagename;
-       $category->save();
-        
-        return redirect()->route('category.index');
-        return back()->with('success','image uploaded successfully!');
-                      
        
+        $category = category::create($request->all());
+        
+        
+      $category->image = $imagename;
+     
+      $category->save();
+
+        return redirect()->route('category.index');
+        return back()->with('success','category upload successfully!');
+    
         
    
     }
@@ -90,14 +91,15 @@ class CategoryController extends Controller
     public function update(Request $request, $id)
     {
         $category =category::find($id);
+        $category->update($request->all());
         $imagename = Time().'.'.$request->file('image')->getClientOriginalExtension();
-        move_uploaded_file($request->image, 'backend/image/'.$imagename);
+        move_uploaded_file($request->image,'backend/image/'.$imagename);
+
+        
+      $category->image = $imagename;
      
-        $category-> image = $imagename;
         $category->name = $request->get('name');
         $category->item = $request->get('item');
-        $category->status= $request->get('status');
-
        
         $category->save();
         return redirect()->route('category.index')
@@ -116,5 +118,24 @@ class CategoryController extends Controller
         $category->delete();
 
         return redirect()->route('category.index'); 
+    }
+
+
+    public function onStatus(Request $request, $id)
+    {
+        $status = category::find($id);
+        $status-> status = 'on';
+        $status->save();
+        return redirect()->route('category.index')
+            ->with('success','Status Active successfully.');
+    }
+
+    public function offStatus(Request $request, $id)
+    {
+        $status = category::find($id);
+        $status-> status = 'off';
+        $status->save();
+        return redirect()->route('category.index')
+            ->with('success','Status DeActive successfully.');
     }
 }

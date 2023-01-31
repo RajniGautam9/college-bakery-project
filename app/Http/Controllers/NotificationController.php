@@ -98,4 +98,22 @@ class NotificationController extends Controller
  
         return redirect()->route('notification.index');
     }
+
+    public function onStatus(Request $request, $id)
+    {
+        $status = notification::find($id);
+        $status-> status = 'on';
+        $status->save();
+        return redirect()->route('notification.index')
+            ->with('success','Status Active successfully.');
+    }
+    
+    public function offStatus(Request $request, $id)
+    {
+        $status = notification::find($id);
+        $status-> status = 'off';
+        $status->save();
+        return redirect()->route('notification.index')
+            ->with('success','Status DeActive successfully.');
+    }
 }

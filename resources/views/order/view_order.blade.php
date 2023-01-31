@@ -43,7 +43,7 @@
                     @foreach($order as $order)
                     <tr>
                       <td>{{$loop->iteration}}</td>
-                      <td>{{$order->name}}</td>
+                      <td>{{$order->customer->name}}</td>
                       <td>{{$order->order}}</td> 
                       <td>{{$order->amount}}</td> 
                       <td>{{$order->discount}}</td> 

@@ -30,7 +30,7 @@
                   <thead>
                     <tr>
                       <th>ID</th>
-                      <th>Name</th>
+                      <th> Category Name</th>
                       <th>Image</th>
                       <th>Total Items</th>
                       <th>Status</th>
@@ -44,7 +44,24 @@
                       <td>{{$category->name}}</td>
                       <td><img src="{{asset('backend/image/'.$category->image)}}" style="height:50px; width:50px;"></td>
                       <td>{{$category->item}}</td>
-                      <td>{{$category->status}}</td>
+                     
+
+
+                      <td class="centre" style="display:flex;">
+                          
+                          @if($category['status']=='on')                              
+                              <a href="{{ url('category/offStatus',$category->id) }}"><button class="btn btn-danger btn-sm" type="reset">De-Active</button></a>
+
+                                @else($category['status']=='off') 
+                                  <a href="{{ url('category/onStatus',$category->id) }}"><button class="btn btn-warning btn-sm" type="reset">Active</button></a>
+
+                            @endif
+                             &nbsp;
+                             <button class="btn btn-info btn-sm" data-toggle="modal" data-target="#viewBatch{{$category->id}}"><i class="fas fa-eye"></i></button> 
+                            &nbsp;
+</td>
+
+
                       <td><a href="{{route('category.edit',[$category->id])}}"> <button type="button" class="btn btn-sm">Edit</button></a>
                                            <form role="form" method="post" action="{{route('category.destroy',[$category->id])}}">
                                     @csrf  
