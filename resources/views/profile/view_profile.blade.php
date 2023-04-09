@@ -6,7 +6,7 @@
   <div class="content-wrapper">
   <section class="content" >
       <div class="container-fluid" >
-        <div class="row"  style="align-item:center;border-radius:50%;margin-left:200px;">
+        <div class="row"  style="border-radius:50%;margin-left:200px;">
           <div class="col-md-6 p-15">
 
             <!-- Profile Image -->
@@ -15,28 +15,28 @@
                 <div class="text-center">
                 
                   <img class="profile-user-img img-fluid img-circle"
-                       src="{{asset('backend/image/.$user->image')}}" style="height:100px;width:100px;border-radius:100px;"
+                       src="#" style="height:100px;width:100px;border-radius:100px;"
                        alt="User profile picture">
                 </div>
 
-               <label> <h3 class="profile-username text-center">{{$user->name}}</h3></label>
+               <label> <h3 class="profile-username text-center">{{ Auth::user()->name }}</h3></label>
 
                 <p class="text-muted text-center"></p>
 
                 <ul class="list-group list-group-unbordered mb-3">
 
                 <li class="list-group-item">
-                    <b>Profession</b> <a class="float-right">{{$user->profession}}</a>
+                    <b>Profession</b> <a class="float-right">{{ Auth::user()->profession ?? '-' }}</a>
                   </li>
                   <li class="list-group-item">
-                    <b>City</b> <a class="float-right">{{$user->city}}</a>
+                    <b>City</b> <a class="float-right">{{ Auth::user()->state }}</a>
                   </li>
                   
                   <li class="list-group-item">
-                    <b>address</b> <a class="float-right">{{$user->address}}</a>
+                    <b>address</b> <a class="float-right">{{ Auth::user()->address }}</a>
                   </li>
                   <li class="list-group-item">
-                    <b>Email</b> <a class="float-right">{{$user->email}}</a>
+                    <b>Email</b> <a class="float-right">{{ Auth::user()->email }}</a>
                   </li>
                 </ul>
 

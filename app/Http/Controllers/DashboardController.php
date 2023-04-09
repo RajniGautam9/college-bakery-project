@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\brand;
+use App\faq;
+use App\order;
+use App\category;
 class DashboardController extends Controller
 {
     
@@ -15,6 +18,10 @@ class DashboardController extends Controller
     public function index()
 
 {
-    return view('index');
+    $brand = brand::count();
+    $faq = faq::count();
+    $order = order::count();
+    $category = category::count();
+    return view('index',compact('brand','faq','order','category'));
 }
 }

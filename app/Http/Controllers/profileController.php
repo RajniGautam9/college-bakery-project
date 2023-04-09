@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\user;
-use App\profile;
+
 
 class profileController extends Controller
 {
@@ -15,7 +15,7 @@ class profileController extends Controller
      */
     public function index()
     {
-       $user = User::all();
+       $user = User::first();
        return view('profile.view_profile',compact('user'));
     }
 

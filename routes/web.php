@@ -15,19 +15,19 @@
 
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-
-Route::get('master', function () {
-    return view('layouts.master');
-});
-
-// Route::get('index', function () {
-//     return view('index');   
-    
+// Route::get('/', function () {
+//     return view('welcome');
 // });
+
+
+// Route::get('master', function () {
+//     return view('layouts.master');
+// });
+
+Route::get('index', function () {
+    return view('index');   
+    
+ });
 
 Route::resource('delivery','DeliveryController');
 
@@ -51,6 +51,8 @@ Route::resource('profile','profileController');
 
 
 
+
+
 // ------------- Status active or deactive ----------------------- 
 // ================== Brands Status Update route =============================
 Route::get('brands/onStatus/{id}',[App\Http\Controllers\BrandController::class, 'onStatus']);
@@ -69,6 +71,7 @@ Route::get('customer/offStatus/{id}',[App\Http\Controllers\CustomerController::c
 
 
 
+
 // ------------- Status active or deactive ----------------------- 
 // ================== delivery Status Update route =============================
 Route::get('delivery/onStatus/{id}',[App\Http\Controllers\DeliveryController::class, 'onStatus']);
@@ -80,7 +83,8 @@ Route::get('notification/onStatus/{id}',[App\Http\Controllers\NotificationContro
 Route::get('notification/offStatus/{id}',[App\Http\Controllers\NotificationController::class, 'offStatus']);
 
 
-Auth::routes();
 
-Route::get('/index', 'DashboardController@index')->name('index');
+Auth::routes();
+Route::get('/', 'DashboardController@index')->name('index');
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
